@@ -7,8 +7,6 @@ function BucketList() {
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
-
-    // TODO: Write logic to add the new bucket item to the bucket state variable
     console.log(
       'File: BucketList.js ~ line 10 ~ addBucketItem ~ item',
       item
@@ -30,23 +28,20 @@ function BucketList() {
   const completeBucketItem = (id) => {
     // If the ID passed to this function matches the ID of the item that was clicked, mark it as complete
     let updatedBucket = bucket.map((item) => {
-      
-      // TODO: Write logic that marks an item as complete or incomplete when invoked
       if (item.id === id) {
         item.isComplete = !item.isComplete;
       }
       return item;
     });
+
     console.log(updatedBucket);
     setBucket(updatedBucket);
   };
 
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
-    // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
     const updatedBucket = [...bucket].filter((item) => item.id !== id);
 
-    // TODO: Update the bucket state variable
     setBucket(updatedBucket);
   };
 
@@ -58,7 +53,7 @@ function BucketList() {
     }
 
     // We use the "prev" argument provided with the useState hook to map through our list of items
-    // We then check to see if the item ID matches the id of the item that was clicked and if so, we set it to a new value
+    // We then check to see if the item ID matches the if of the item that was clicked and if so we set it to a new value
     setBucket((prev) =>
       prev.map((item) => (item.id === itemId ? newValue : item))
     );
